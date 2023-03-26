@@ -24,7 +24,11 @@ function displayGrid(size = 16) {
         for (let j = 0; j < size; j++) {
             let cell = document.createElement("div");
             cell.classList.add("cell");
-            cell.style.border = "none";
+            if (isBordersOn) {
+                cell.style.border = "1px solid rgba(0,0,0,0.1)";
+            } else {
+                cell.style.border = 'none';
+            }
             row.append(cell);
         }
         grid.append(row);
@@ -122,7 +126,7 @@ buttons.forEach(button => {
                 if (isBordersOn) {
                     cell.style.border = "none";
                 } else {
-                    cell.style.border = "1px solid black";
+                    cell.style.border = "1px solid rgba(0,0,0,0.1)";
                 }
 
             })
